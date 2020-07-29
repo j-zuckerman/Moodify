@@ -4,9 +4,10 @@ import Login from './Login';
 import MoodSlider from './MoodSlider';
 import GenreSelector from './GenreSelector';
 import RecommendedButton from './RecommendedButton';
+import Tracks from './Tracks';
 
 function App() {
-  const { fetchAccessToken, token } = useContext(MoodifyContext);
+  const { fetchAccessToken, token, tracks } = useContext(MoodifyContext);
 
   useEffect(() => {
     fetchAccessToken();
@@ -16,9 +17,15 @@ function App() {
     <div className="App">
       {!token && <Login></Login>}
 
-      <MoodSlider></MoodSlider>
-      <GenreSelector></GenreSelector>
-      <RecommendedButton></RecommendedButton>
+      {token && !tracks && (
+        <>
+          <MoodSlider></MoodSlider>
+          <GenreSelector></GenreSelector>
+          <RecommendedButton></RecommendedButton>
+        </>
+      )}
+
+      {tracks && <Tracks></Tracks>}
     </div>
   );
 }

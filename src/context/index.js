@@ -6,6 +6,7 @@ export const MoodifyContext = createContext();
 const MoodifyProvider = ({ children }) => {
   const [state, setState] = useState({ x: 10, y: 10 });
   const [token, setToken] = useState(null);
+  const [tracks, setTracks] = useState(null);
   const [genresPicked, setGenresPicked] = useState([]);
 
   function fetchAccessToken() {
@@ -51,6 +52,7 @@ const MoodifyProvider = ({ children }) => {
 
     const data = await response.json();
     console.log(data);
+    setTracks(data.tracks);
   }
 
   return (
@@ -64,6 +66,7 @@ const MoodifyProvider = ({ children }) => {
         state,
         setState,
         fetchRecommendedSongs,
+        tracks,
       }}
     >
       {children}
