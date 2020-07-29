@@ -57,6 +57,7 @@ const MoodifyProvider = ({ children }) => {
 
   function reset() {
     setTracks(null);
+    setGenresPicked([]);
   }
 
   return (

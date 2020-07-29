@@ -15,7 +15,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div>
       {!token && (
         <div className="container mt-20 mx-auto flex flex-col items-center content-center">
           <h1 className="text-5xl">Moodify</h1>
@@ -42,7 +42,7 @@ function App() {
 
       {tracks && (
         <>
-          <h3 className="text-3xl mt-20 mb-20 text-center">
+          <h3 className="text-3xl mt-20 mb-12 text-center">
             Here are your recommended songs:
           </h3>
           <Tracks></Tracks>
