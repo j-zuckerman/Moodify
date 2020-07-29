@@ -3,6 +3,7 @@ import { MoodifyContext } from '../context';
 import Login from './Login';
 import MoodSlider from './MoodSlider';
 import GenreSelector from './GenreSelector';
+import RecommendedButton from './RecommendedButton';
 
 function App() {
   const { fetchAccessToken, token } = useContext(MoodifyContext);
@@ -17,6 +18,7 @@ function App() {
 
       <MoodSlider></MoodSlider>
       <GenreSelector></GenreSelector>
+      <RecommendedButton></RecommendedButton>
     </div>
   );
 }

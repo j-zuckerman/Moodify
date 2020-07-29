@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { MoodifyContext } from '../context';
 import Slider from 'react-input-slider';
 import styled from 'styled-components';
 import {
@@ -14,7 +15,7 @@ const MoodContainer = styled.div`
 `;
 
 function MoodSlider() {
-  const [state, setState] = useState({ x: 10, y: 10 });
+  const { state, setState } = useContext(MoodifyContext);
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
