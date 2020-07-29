@@ -18,14 +18,16 @@ function MoodSlider() {
   const { state, setState } = useContext(MoodifyContext);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div
+      style={{ display: 'flex', justifyContent: 'center' }}
+      className="mb-20"
+    >
       <MoodContainer>
         <VerticalLabelTop>Energetic</VerticalLabelTop>
         <VerticalLabelBottom>Peaceful</VerticalLabelBottom>
         <HorizontalLabelLeft>Sad</HorizontalLabelLeft>
         <HorizontalLabelRight>Happy</HorizontalLabelRight>
-        <Slider axis="xy" x={state.x} y={state.y} onChange={setState} />(
-        {state.x}, {state.y})
+        <Slider axis="xy" x={state.x} y={state.y} onChange={setState} />
       </MoodContainer>
     </div>
   );
