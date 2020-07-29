@@ -5,6 +5,7 @@ import MoodSlider from './MoodSlider';
 import GenreSelector from './GenreSelector';
 import RecommendedButton from './RecommendedButton';
 import Tracks from './Tracks';
+import BackButton from './BackButton';
 
 function App() {
   const { fetchAccessToken, token, tracks } = useContext(MoodifyContext);
@@ -39,7 +40,15 @@ function App() {
         </div>
       )}
 
-      {tracks && <Tracks></Tracks>}
+      {tracks && (
+        <>
+          <h3 className="text-3xl mt-20 mb-20 text-center">
+            Here are your recommended songs:
+          </h3>
+          <Tracks></Tracks>
+          <BackButton></BackButton>
+        </>
+      )}
     </div>
   );
 }

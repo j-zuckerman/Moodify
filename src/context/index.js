@@ -55,6 +55,10 @@ const MoodifyProvider = ({ children }) => {
     setTracks(data.tracks);
   }
 
+  function reset() {
+    setTracks(null);
+  }
+
   return (
     <MoodifyContext.Provider
       value={{
@@ -67,6 +71,7 @@ const MoodifyProvider = ({ children }) => {
         setState,
         fetchRecommendedSongs,
         tracks,
+        reset,
       }}
     >
       {children}
