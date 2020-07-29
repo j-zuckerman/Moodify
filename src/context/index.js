@@ -8,10 +8,13 @@ const MoodifyProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [tracks, setTracks] = useState(null);
   const [genresPicked, setGenresPicked] = useState([]);
+  const [userId, setUserId] = useState(null);
 
   function fetchAccessToken() {
     console.log(hash.access_token);
     setToken(hash.access_token);
+
+    getUserId();
   }
 
   function addGenre(genre) {
@@ -60,6 +63,54 @@ const MoodifyProvider = ({ children }) => {
     setGenresPicked([]);
   }
 
+  async function getUserId() {
+    const response = await fetch('https://api.spotify.com/v1/me', {
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    });
+
+    const data = await response.json();
+    console.log(data);
+    return data.id;
+  }
+
+  async function createPlaylist() {
+    const userId = await getUserId();
+    const response = await fetch(
+      `https://api.spotify.com/v1/users/${userId}/playlists`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: 'Bearer ' + token,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: 'Moodify Recommendations' }),
+      }
+    );
+    let data = await response.json();
+
+    populatePlaylist(data.id);
+  }
+
+  async function populatePlaylist(playlistId) {
+    const populatePlaylistUrl = `https://api.spotify.com/v1/playlists/${playlistId}/tracks`;
+
+    await fetch(populatePlaylistUrl, {
+      method: 'PUT',
+      headers: {
+        Authorization: 'Bearer ' + token,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        uris: tracks.map((track) => track.uri),
+      }),
+    });
+
+    const playlistUrl = `https://open.spotify.com/playlist/${playlistId}`;
+    window.open(playlistUrl);
+  }
+
   return (
     <MoodifyContext.Provider
       value={{
@@ -73,6 +124,7 @@ const MoodifyProvider = ({ children }) => {
         fetchRecommendedSongs,
         tracks,
         reset,
+        createPlaylist,
       }}
     >
       {children}

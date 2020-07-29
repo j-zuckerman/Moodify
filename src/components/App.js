@@ -6,6 +6,7 @@ import GenreSelector from './GenreSelector';
 import RecommendedButton from './RecommendedButton';
 import Tracks from './Tracks';
 import BackButton from './BackButton';
+import CreatePlaylistButton from './CreatePlaylistButton';
 
 function App() {
   const { fetchAccessToken, token, tracks } = useContext(MoodifyContext);
@@ -47,6 +48,7 @@ function App() {
           </h3>
           <Tracks></Tracks>
           <BackButton></BackButton>
+          <CreatePlaylistButton></CreatePlaylistButton>
         </>
       )}
     </div>
