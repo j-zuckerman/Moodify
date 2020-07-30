@@ -1,5 +1,11 @@
 import React from 'react';
-import { redirectUri, authEndpoint, clientId, scopes } from '../util/config';
+import { authEndpoint, clientId, scopes } from '../util/config';
+
+let redirectUri;
+if (process.env.NODE_ENV === 'development')
+  redirectUri = 'http://localhost:3000';
+else if (process.env.NODE_ENV === 'production')
+  redirectUri = 'https://react-spotify-db.herokuapp.com/';
 
 function Login() {
   return (

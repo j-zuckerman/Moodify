@@ -42,14 +42,16 @@ function App() {
       )}
 
       {tracks && (
-        <>
-          <h3 className="text-3xl mt-20 mb-12 text-center">
+        <div className="flex justify-center items-center flex-col">
+          <h3 className="text-3xl mt-20 mb-12">
             Here are your recommended songs:
           </h3>
           <Tracks></Tracks>
-          <BackButton></BackButton>
-          <CreatePlaylistButton></CreatePlaylistButton>
-        </>
+          <div className="mb-10">
+            <CreatePlaylistButton></CreatePlaylistButton>
+            <BackButton></BackButton>
+          </div>
+        </div>
       )}
     </div>
   );
