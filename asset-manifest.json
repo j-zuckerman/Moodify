@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Moodify/static/css/main.e6986258.chunk.css",
-    "main.js": "/Moodify/static/js/main.0eaf87f5.chunk.js",
-    "main.js.map": "/Moodify/static/js/main.0eaf87f5.chunk.js.map",
+    "main.js": "/Moodify/static/js/main.3059a2c0.chunk.js",
+    "main.js.map": "/Moodify/static/js/main.3059a2c0.chunk.js.map",
     "runtime-main.js": "/Moodify/static/js/runtime-main.b2c65d49.js",
     "runtime-main.js.map": "/Moodify/static/js/runtime-main.b2c65d49.js.map",
     "static/js/2.d35218fd.chunk.js": "/Moodify/static/js/2.d35218fd.chunk.js",
     "static/js/2.d35218fd.chunk.js.map": "/Moodify/static/js/2.d35218fd.chunk.js.map",
     "index.html": "/Moodify/index.html",
-    "precache-manifest.909ad306eae442e1ab35eea8a69deec7.js": "/Moodify/precache-manifest.909ad306eae442e1ab35eea8a69deec7.js",
+    "precache-manifest.5d94379c869b0b1e55abed8d75bf4f79.js": "/Moodify/precache-manifest.5d94379c869b0b1e55abed8d75bf4f79.js",
     "service-worker.js": "/Moodify/service-worker.js",
     "static/css/main.e6986258.chunk.css.map": "/Moodify/static/css/main.e6986258.chunk.css.map",
     "static/js/2.d35218fd.chunk.js.LICENSE.txt": "/Moodify/static/js/2.d35218fd.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b2c65d49.js",
     "static/js/2.d35218fd.chunk.js",
     "static/css/main.e6986258.chunk.css",
-    "static/js/main.0eaf87f5.chunk.js"
+    "static/js/main.3059a2c0.chunk.js"
   ]
 }
