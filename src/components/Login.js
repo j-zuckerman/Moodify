@@ -5,7 +5,7 @@ let redirectUri;
 if (process.env.NODE_ENV === 'development')
   redirectUri = 'http://localhost:3000';
 else if (process.env.NODE_ENV === 'production')
-  redirectUri = 'https://react-spotify-db.herokuapp.com/';
+  redirectUri = 'https://j-zuckerman.github.io/Moodify/';
 
 function Login() {
   return (
