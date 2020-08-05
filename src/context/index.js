@@ -4,7 +4,7 @@ import hash from '../util/hash';
 export const MoodifyContext = createContext();
 
 const MoodifyProvider = ({ children }) => {
-  const [state, setState] = useState({ x: 10, y: 10 });
+  const [state, setState] = useState({ x: 50, y: 50 });
   const [token, setToken] = useState(null);
   const [tracks, setTracks] = useState(null);
   const [genresPicked, setGenresPicked] = useState([]);

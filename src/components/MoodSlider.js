@@ -27,7 +27,17 @@ function MoodSlider() {
         <VerticalLabelBottom>Peaceful</VerticalLabelBottom>
         <HorizontalLabelLeft>Sad</HorizontalLabelLeft>
         <HorizontalLabelRight>Happy</HorizontalLabelRight>
-        <Slider axis="xy" x={state.x} y={state.y} onChange={setState} />
+        <Slider
+          styles={{
+            track: {
+              backgroundColor: '#26A36D',
+            },
+          }}
+          axis="xy"
+          x={state.x}
+          y={state.y}
+          onChange={setState}
+        />
       </MoodContainer>
     </div>
   );
