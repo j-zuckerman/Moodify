@@ -7,7 +7,7 @@ function Tracks() {
 
   return (
     <div className="flex justify-center w-11/12 max-w-5xl m-4 ">
-      <div className="grid gap-1 grid-cols-4 justify-center">
+      <div className="grid gap-1 grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {tracks.map((track) => (
           <a href={track.external_urls.spotify} target="_blank">
             <div className="flex mr-5 mb-3 align-center w-64 h-24 p-2">
